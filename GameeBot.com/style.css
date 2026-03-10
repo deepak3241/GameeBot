@@ -1,0 +1,218 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: white;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background: #020617;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    color: #38bdf8;
+    font-size: 1.5em;
+    margin: 0;
+}
+
+#search {
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    flex: 1;
+    max-width: 300px;
+    margin: 0 10px;
+}
+
+#categoryFilter {
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+}
+
+/* GRID */
+.games {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-rows: 180px;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* CARD */
+.card {
+    background: #1e293b;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.card video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover video {
+    opacity: 1;
+}
+
+.card h3 {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    margin: 0;
+    padding: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* CARD SIZES */
+.small {
+    grid-row: span 1;
+}
+
+.medium {
+    grid-row: span 2;
+}
+
+.big {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+/* PLAYER PAGE */
+#player {
+    display: none;
+    padding: 20px;
+}
+
+iframe {
+    width: 100%;
+    height: 80vh;
+    border: none;
+}
+
+button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #38bdf8;
+    color: white;
+    margin: 5px;
+}
+
+.section {
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+/* RESPONSIVE DESIGN */
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .logo {
+        font-size: 1.2em;
+    }
+
+    #search {
+        max-width: none;
+        width: 100%;
+        margin: 0;
+    }
+
+    #categoryFilter {
+        width: 100%;
+    }
+
+    .games {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        grid-auto-rows: 120px;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .card h3 {
+        font-size: 12px;
+        padding: 4px;
+    }
+
+    .big {
+        grid-column: span 1;
+    }
+
+    iframe {
+        height: 60vh;
+    }
+
+    /* Touch-friendly interactions */
+    .card {
+        min-height: 44px; /* Minimum touch target */
+    }
+
+    button {
+        min-height: 44px;
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+}
+
+@media (max-width: 480px) {
+    .games {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        grid-auto-rows: 100px;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .card h3 {
+        font-size: 10px;
+        padding: 3px;
+    }
+
+    header {
+        padding: 8px;
+    }
+
+    #player {
+        padding: 10px;
+    }
+
+    iframe {
+        height: 50vh;
+    }
+}

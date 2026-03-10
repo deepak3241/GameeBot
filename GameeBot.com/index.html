@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Free HTML5 Games - Play action, racing, and puzzle games online">
+<meta name="theme-color" content="#0f172a">
+<title>GameeBot - Free HTML5 Games</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://picsum.photos">
+<link rel="dns-prefetch" href="https://html5games.com">
+</head>
+
+<body>
+
+<header>
+
+<h1 class="logo">GameeBot</h1>
+
+<input type="text" id="search" placeholder="Search games...">
+
+<select id="categoryFilter">
+<option value="all">All</option>
+<option value="action">Action</option>
+<option value="racing">Racing</option>
+<option value="puzzle">Puzzle</option>
+</select>
+
+</header>
+
+
+<!-- HOME PAGE -->
+
+<section id="home">
+
+<div id="gameGrid" class="games"></div>
+
+</section>
+
+
+<!-- PLAYER PAGE -->
+
+<section id="player">
+
+<button onclick="goHome()">⬅ Back</button>
+
+<h2 id="gameTitle"></h2>
+
+<button onclick="fullscreenGame()">Fullscreen</button>
+
+<br><br>
+
+<iframe id="gameFrame"></iframe>
+
+<h2 class="section">Recommended Games</h2>
+
+<div id="recommended" class="games"></div>
+
+</section>
+
+
+<script src="script.js" defer></script>
+
+</body>
+</html>
